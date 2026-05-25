@@ -32,16 +32,22 @@ function ProductList() {
 
   return (
     <div>
+
+      {/* NAVBAR (مهم جدًا) */}
+      <nav>
+        <h3>Paradise Nursery</h3>
+      </nav>
+
       <h2>Products</h2>
 
       {plantsArray.map((cat) => (
         <div key={cat.category}>
           <h3>{cat.category}</h3>
 
-          <div>
+          <div style={{ display: "flex", gap: "10px" }}>
             {cat.plants.map((plant) => (
               <div key={plant.id}>
-                <img src={plant.img} alt={plant.name} width="100" />
+                <img src={plant.img} width="100" />
                 <h4>{plant.name}</h4>
                 <p>${plant.price}</p>
 

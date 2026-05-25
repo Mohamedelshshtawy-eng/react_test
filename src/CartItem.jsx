@@ -5,9 +5,10 @@ function CartItem() {
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
 
-  const getTotal = () => {
-    return cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-  };
+  const totalCart = cart.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0
+  );
 
   return (
     <div>
@@ -53,7 +54,7 @@ function CartItem() {
         </div>
       ))}
 
-      <h3>Total Cart: ${getTotal()}</h3>
+      <h2>Total Cart: ${totalCart}</h2>
     </div>
   );
 }
